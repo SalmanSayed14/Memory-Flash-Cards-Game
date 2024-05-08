@@ -81,3 +81,26 @@ body {
   height: 50px;
   font-family: 'Rubik Mono One', monospace;
 }
+
+.game-boards {
+  padding: 40px;
+  width: 1155px;
+  height: 420px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  perspective: 1000px;
+}
+
+.fronts,
+.backs {
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  border-radius: 30px;
+  backface-visibility: hidden;
+}
+
+.fronts {
+  transform: rotateY(180deg);
+}
