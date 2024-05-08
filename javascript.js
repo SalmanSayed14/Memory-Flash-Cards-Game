@@ -16,8 +16,11 @@ function handleCardClicked() {
       firstCard.removeEventListener('click', handleCardClicked)
       secondCard.removeEventListener('click', handleCardClicked)
     } else if (firstCard.dataset.img != secondCard.dataset.img) {
-      firstCard.classList.remove('flip')
-      secondCard.classList.remove('flip')
+      setTimeout(() => {
+        firstCard.classList.remove('flip')
+        secondCard.classList.remove('flip')
+        isInProcess = true
+      }, 1000)
     }
   }
 }
