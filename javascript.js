@@ -1,5 +1,6 @@
 const allCards = document.querySelectorAll('.card')
 let firstCard, secondCard
+let isFlippedCard = false
 allCards.forEach((card) => card.addEventListener('click', handleCardClicked))
 
 function handleCardClicked() {
@@ -10,5 +11,6 @@ function handleCardClicked() {
   } else {
     isFlippedCard = false
     secondCard = this
+    console.log(firstCard, secondCard)
   }
 }
