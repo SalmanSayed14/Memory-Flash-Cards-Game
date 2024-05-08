@@ -52,3 +52,12 @@ body {
 .front {
   transform: rotateY(180deg);
 }
+
+#replay {
+  color: white;
+  background-color: rgb(23, 197, 197);
+  border-radius: 20%;
+  width: 100px;
+  height: 50px;
+  font-family: 'Rubik Mono One', monospace;
+}
