@@ -13,7 +13,8 @@ function handleCardClicked() {
     secondCard = this
 
     if (firstCard.dataset.img === secondCard.dataset.img) {
-      console.log('game')
+      firstCard.removeEventListener('click', handleCardClicked)
+      secondCard.removeEventListener('click', handleCardClicked)
     }
   }
 }
