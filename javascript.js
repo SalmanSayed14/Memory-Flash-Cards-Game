@@ -5,6 +5,11 @@ let isInProcess = true
 
 allCards.forEach((card) => card.addEventListener('click', handleCardClicked))
 
+allCards.forEach((card) => {
+  let randPos = Math.floor(Math.random() * 12)
+  card.style.order = randPos
+})
+
 function handleCardClicked() {
   if (!isInProcess) return
   this.classList.add('flip')
