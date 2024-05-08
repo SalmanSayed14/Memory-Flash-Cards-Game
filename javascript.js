@@ -11,6 +11,9 @@ function handleCardClicked() {
   } else {
     isFlippedCard = false
     secondCard = this
-    console.log(firstCard, secondCard)
+
+    if (firstCard.dataset.img === secondCard.dataset.img) {
+      console.log('game')
+    }
   }
 }
