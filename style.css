@@ -39,3 +39,16 @@ body {
   border-radius: 30px;
   backface-visibility: hidden;
 }
+
+.card active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.front {
+  transform: rotateY(180deg);
+}
