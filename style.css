@@ -61,3 +61,14 @@ body {
   height: 50px;
   font-family: 'Rubik Mono One', monospace;
 }
+
+#screenMode {
+  width: 60px;
+  height: 60px;
+  padding: 0px;
+  border-radius: 30px;
+  backface-visibility: hidden;
+  color: white;
+  background-color: rgb(23, 197, 197);
+  position: center;
+}
