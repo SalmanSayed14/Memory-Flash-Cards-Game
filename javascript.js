@@ -2,6 +2,7 @@ const allCards = document.querySelectorAll('.card')
 let firstCard, secondCard
 let isFlippedCard = false
 let isInProcess = true
+let errors = 0
 
 allCards.forEach((card) => card.addEventListener('click', handleCardClicked))
 
@@ -32,6 +33,8 @@ function handleCardClicked() {
       secondCard.removeEventListener('click', handleCardClicked)
     } else if (firstCard.dataset.img != secondCard.dataset.img) {
       isInProcess = false
+      errors += 1
+      document.getElementById('errors').innerText = errors
       setTimeout(() => {
         firstCard.classList.remove('flip')
         secondCard.classList.remove('flip')
