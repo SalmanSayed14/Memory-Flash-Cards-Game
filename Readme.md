@@ -10,7 +10,7 @@
 
 ### **_Description_**
 
-#### it's a Build a browser-based Memory cards game that the player can choose two card if these cards are similar or not
+#### it's a Build a browser-based Memory cards game that the player can choose two card if these cards are similar or not and have limit attempts
 
 ---
 

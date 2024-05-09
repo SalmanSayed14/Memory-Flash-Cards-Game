@@ -2,8 +2,8 @@ const allCards = document.querySelectorAll('.card')
 let firstCard, secondCard
 let isFlippedCard = false
 let isInProcess = true
+let msgContainer = document.querySelector('.msg-container')
 let errors = 0
-
 let body = document.querySelector('body')
 let screenmod = true
 const screenmode = document.querySelector('#screenMode')
@@ -19,14 +19,13 @@ screenmode.addEventListener('click', () => {
   }
 })
 
-allCards.forEach((card) => card.addEventListener('click', handleCardClicked))
-
+allCards.forEach((card) => card.addEventListener('click', CardClicked))
 allCards.forEach((card) => {
   let randPos = Math.floor(Math.random() * 12)
   card.style.order = randPos
 })
 
-function handleCardClicked() {
+function CardClicked() {
   if (!isInProcess) return
   this.classList.add('flip')
   if (!isFlippedCard) {
@@ -44,8 +43,8 @@ function handleCardClicked() {
       firstCard.dataset.img === secondCard.dataset.img &&
       firstCard.dataset.cardnumber != secondCard.dataset.cardnumber
     ) {
-      firstCard.removeEventListener('click', handleCardClicked)
-      secondCard.removeEventListener('click', handleCardClicked)
+      firstCard.removeEventListener('click', CardClicked)
+      secondCard.removeEventListener('click', CardClicked)
     } else if (firstCard.dataset.img != secondCard.dataset.img) {
       isInProcess = false
       errors += 1
@@ -55,6 +54,7 @@ function handleCardClicked() {
         secondCard.classList.remove('flip')
         isInProcess = true
       }, 1000)
+      if (errors == 5) msgContainer.classList.remove('hide')
     }
   }
 }
