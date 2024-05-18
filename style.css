@@ -9,11 +9,17 @@ div {
   align-items: center;
   flex-wrap: wrap;
 }
-img {
+.image {
   position: center;
-  display: flex;
   width: 150px;
   height: 150px;
+}
+.btn {
+  margin: 15px;
+  position: center;
+  background-color: blue;
+  width: 155px;
+  height: 155px;
 }
 h2 {
   font-size: 50px;
