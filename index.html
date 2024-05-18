@@ -8,25 +8,40 @@
 </head>
 <body>
   <div class="winMge">
-    <h>You win go to the next level</h>
-    <button><a href="http://localhost:5500/">Next</a></button>
+    <h1>You win</h1>
+    <button><a href="google.com">Next Level</a></button>
   </div>
   <div class="loseMge">
-    <h>You lose try again</h>
-    <button><a href="http://localhost:5500/">Replay</a></button>
+    <h1>You lose</h1>
+    <button><a href="google.com">Try again</a></button>
   </div>
-    <h1>Memory Game</h1>
-  <div id="gameBoard">
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
+  <h2>Memory Game</h2>
+  <div class="gameBoard">
+    <button class="btn" data-image="01" onclick="buttonClicked(this)">1</button>
+    <button class="btn" data-image="02" onclick="buttonClicked(this)">2</button>
+    <button class="btn" data-image="03" onclick="buttonClicked(this)">3</button>
+    <button class="btn" data-image="04" onclick="buttonClicked(this)">4</button>
+    <button class="btn" data-image="05" onclick="buttonClicked(this)">5</button>
+    <button class="btn" data-image="06" onclick="buttonClicked(this)">6</button>
+    <button class="btn" data-image="07" onclick="buttonClicked(this)">7</button>
+    <button class="btn" data-image="08" onclick="buttonClicked(this)">8</button>
+    <button class="btn" data-image="09" onclick="buttonClicked(this)">9</button>
+    <button class="btn" data-image="10" onclick="buttonClicked(this)">10</button>
   </div>
+  <div class="imageShow">
+    <img class="image" id="img01" src="https://st2.depositphotos.com/4441075/6544/i/600/depositphotos_65442095-stock-photo-single-a-alphabet-letter.jpg">
+    <img class="image" id="img02" src="https://st2.depositphotos.com/4441075/6544/i/600/depositphotos_65442267-stock-photo-single-e-alphabet-letter.jpg">
+    <img class="image" id="img03" src="https://st2.depositphotos.com/4441075/6544/i/600/depositphotos_65441989-stock-photo-single-p-alphabet-letter.jpg">
+    <img class="image" id="img04" src="https://st2.depositphotos.com/4441075/6544/i/600/depositphotos_65441885-stock-photo-single-s-alphabet-letter.jpg">
+    <img class="image" id="img05" src="https://st2.depositphotos.com/4441075/6544/i/600/depositphotos_65441955-stock-photo-single-r-alphabet-letter.jpg">
+    <img class="image" id="img06" src="https://st2.depositphotos.com/4441075/6544/i/600/depositphotos_65442095-stock-photo-single-a-alphabet-letter.jpg">
+    <img class="image" id="img07" src="https://st2.depositphotos.com/4441075/6544/i/600/depositphotos_65442267-stock-photo-single-e-alphabet-letter.jpg">
+    <img class="image" id="img08" src="https://st2.depositphotos.com/4441075/6544/i/600/depositphotos_65441989-stock-photo-single-p-alphabet-letter.jpg">
+    <img class="image" id="img09" src="https://st2.depositphotos.com/4441075/6544/i/600/depositphotos_65441885-stock-photo-single-s-alphabet-letter.jpg">
+    <img class="image" id="img10" src="https://st2.depositphotos.com/4441075/6544/i/600/depositphotos_65441955-stock-photo-single-r-alphabet-letter.jpg">
+  </div>
+  </div>
+
+
 </body>
 </html>
