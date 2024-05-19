@@ -21,9 +21,28 @@ div {
   width: 160px;
   height: 160px;
 }
-h2 {
+.btn1 {
+  margin: 15px;
+  position: center;
+  background-color: blue;
+  width: 160px;
+  height: 160px;
+}
+.megbtn {
+  width: 60px;
+  height: 60px;
+  position: center;
+}
+.startbtn {
+  width: 60px;
+  height: 60px;
+  position: center;
+}
+h2,
+h1 {
   font-size: 50px;
   text-align: center;
+  color: blue;
 }
 
 .winMge {

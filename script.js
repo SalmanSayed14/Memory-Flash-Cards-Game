@@ -1,56 +1,79 @@
 /// defination of allBtns and allImages
 const allBtns = document.querySelectorAll('.btn')
+const allBtns1 = document.querySelectorAll('.btn1')
 const allImages = document.querySelectorAll('.image')
+const loseMeg = document.querySelector('.loseMge')
+const winMeg = document.querySelector('.winMge')
+let wrongs = 0
+let corrects = 0
 
 //// show all image at begining of the game for 4 seconds
+//// show lose meg after one min
 window.onload = function () {
   setTimeout(function () {
     allImages.forEach(function (image) {
       image.style.display = 'none'
     })
   }, 4000)
+  setTimeout(function () {
+    loseMeg.style.display = 'block'
+  }, 60000)
 }
 
 /// Determine the first and second click
 let firstClicked = null
 let secondClicked = null
+let hasClicked = false
+
+// Add event listener to each button
 allBtns.forEach((btn) => {
   btn.addEventListener('click', handleClick)
 })
 
+allBtns1.forEach((btn1) => {
+  btn1.addEventListener('click', handleClick)
+})
+
+/// rando images for level two
+allBtns1.forEach((btn1) => {
+  let random = Math.floor(Math.random() * 10)
+  btn1.style.order = random
+})
+
 function handleClick(event) {
-  const clickedButton = event.target
-  const clickedImage = clickedButton.querySelector('.image')
-  const dataImage = clickedButton.getAttribute('data-image')
-  const dataId = clickedButton.getAttribute('data-id')
-  // If this is the first click, just store the clicked button and return
   if (!firstClicked) {
-    firstClicked = clickedButton
-  } else if (firstClicked === clickedButton) {
-    secondClicked = clickedButton
-    return
+    firstClicked = this
+  } else {
+    secondClicked = this
+    hasClicked = true
   }
 
   // If this is the second click, check if the images match
-  const firstImageData = firstClicked.getAttribute('data-image')
-  const firstdataId = firstClicked.getAttribute('data-id')
-
-  if (dataImage === firstImageData && firstImageData != firstImageData) {
-    // If images match, keep them visible
-    alert('grat')
+  if (firstClicked && secondClicked) {
+    const firstImageData = firstClicked.getAttribute('data-image')
+    const secondImageData = secondClicked.getAttribute('data-image')
     const firstClickedImage = firstClicked.querySelector('.image')
-    firstClickedImage.style.display = ''
     const secondClickedImage = secondClicked.querySelector('.image')
-    secondClickedImage.style.display = ''
-  } else {
-    // If images don't match, hide them after a short delay
-    setTimeout(() => {
-      clickedImage.style.display = 'none'
-      const firstClickedImage = firstClicked.querySelector('.image')
-      firstClickedImage.style.display = 'none'
-    }, 1000) // Change the delay time as needed
+    if (secondImageData === firstImageData) {
+      alert('Great!')
+      firstClicked = null
+      secondClicked = null
+      hasClicked = false
+      firstClickedImage.style.display = 'block'
+      secondClickedImage.style.display = 'block'
+      corrects += 1
+      if (corrects === 5) {
+        winMeg.style.display = 'block'
+      }
+    } else if (secondImageData != firstImageData) {
+      alert('wrong!')
+      wrongs += 1
+      firstClicked = null
+      secondClicked = null
+      hasClicked = false
+      if (wrongs === 3) {
+        loseMeg.style.display = 'block'
+      }
+    }
   }
-
-  // Reset the first clicked button for the next pair
-  firstClicked = null
 }
