@@ -17,12 +17,6 @@ window.onload = function () {
     })
   }, 4000)
   setTimeout(function () {
-    loseMeg.style.display = 'block'
-  }, 60000)
-}
-//// for level two
-window.onload = function () {
-  setTimeout(function () {
     allImages1.forEach(function (image1) {
       image1.style.display = 'none'
     })
